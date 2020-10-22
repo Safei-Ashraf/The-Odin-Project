@@ -1,4 +1,4 @@
-// 1-generate CPU random answer 
+// 1-generate CPU random answer DONE
 // 2-Take user input
 // 3-Handle user input to be case senstive
 // 4-compare 2 inputs from user vs cpu 
@@ -8,19 +8,58 @@
 // 8-return the big winner!
 
 
-function computerPlay(){
-    const moves = ['rock','paper','scissors']
-    return moves[randomInteger(0,2)];
+const computerPlay =()=>{
+    const moves = ['Rock','Paper','Scissors']
+    const selecteCPU = moves[randomInteger(3)];
+    return selecteCPU;
 };
+//read move from dom:
+const selectBtn = document.querySelector('#move-btn');
+
+selectBtn.addEventListener('click',function(){
+    const humanMove = document.getElementById('move').value;
+    playRound(humanMove, computerPlay());
+    console.log(humanMove);
+})
 function humanPlay(){};
 function playRound(playerSelection, computerSelection){
-    //return winner
+    if(playerSelection === computerSelection)
+    {
+        console.log('Tie');
+        return 1;
+    }
+    //Rock
+    if(playerSelection === 'Rock'&& computerSelection === 'Scissors')
+    {
+        console.log('You Win');
+    }
+    if(playerSelection === 'Rock'&& computerSelection === 'Paper')
+    {
+        console.log('HAHAHAHA You lose');
+    }
+    //Paper
+    if(playerSelection === 'Paper'&& computerSelection === 'Scissors')
+    {
+        console.log('HAHAHAHA You lose');
+    }
+    if(playerSelection === 'Paper'&& computerSelection === 'Rock')
+    {
+        console.log('You Win');
+    }
+    //Scissors
+    if(playerSelection === 'Scissors'&& computerSelection === 'Rock')
+    {
+        console.log('HAHAHAHA You lose');
+    }
+    if(playerSelection === 'Scissors'&& computerSelection === 'Paper')
+    {
+        console.log('You Win');
+    }
 }
 
-const playerSelection ='rock' //input from user ;
-const computerSelection = computerPlay(); //returned from that func
+
+
 //helper method:
-/*https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range*/
-function randomInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
+function randomInteger(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+}
