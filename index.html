@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Turret+Road:wght@700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="favico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favico/favicon-16x16.png">
+    <link rel="manifest" href="favico/site.webmanifest">
     <title>&#9994; Rocket Paper Scissors</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -14,18 +19,37 @@
         <div class="container">
             <div class="input-score">
                 <h2>Choose Your Destiny </h2> 
-                <label for="move-selected">Choose  wisely:</label>
+                <label for="move-selected">Choose wisely:</label>
                     <select name="move-selected" id="move">
-                        <option value="Rock"> &#9994;</option>
-                        <option value="Paper">&#9995;</option>
-                        <option value="Scissors"> &#9996;</option>
+                        <option value="Rock"> &#9994;Rock</option>
+                        <option value="Paper">&#9995; Paper</option>
+                        <option value="Scissors"> &#9996; Scissors</option>
                 </select>   
-                <button type="button" id="move-btn">Go!</button>
+                <button type="button" class="btn-grad" id="move-btn">Go!</button>
+                <p class="robot-head" onmouseenter="playAudio()"> &#129302;</p>
+                <p class="threat">AI or Fancy if's Will One Day Dominate The World</p>
+                <p class="threat">Starting Small, One Round At A Time...<p class="flashing animated flash">|</p></p>
             </div>
-            <div class="game-place"> </div>
-            <div class="final-result"> </div>
+            <div class="game-place"> 
+                <div class="human-side">
+                    <h3 class="humanity-banner">Humanity Side</h3>
+                    <div class="human-choice"></div>
+                    <p class="score" id="human-score">0</p>
+                </div>
+                <div class="cpu-side">
+                    <h3 class="cpu-banner">Fancy AI Side</h3>
+                    <div class="cpu-choice"></div>
+                    <p class="score" id="cpu-score">0</p>
+                </div>
+            </div>
+            <div class="final-result" id="final"></div>
         </div>
     </main>
-    <script src="app.js"></script>
+    <audio id="audioID" controls volume="0.1">
+        <source src="audio/hahaha.mp3" type="audio/mpeg">
+      </audio>
+    <script src="scripts/dom.js"></script>
+    <script src="scripts/results.js"></script>
+    <script src="scripts/app.js"></script>
 </body>
 </html>

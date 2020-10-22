@@ -1,39 +1,258 @@
 body{
-    background: url('https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png');
-    padding-top: 30px;
+    background: url('bg.png');
+    padding-top: 5px;
+    color: white;
+    font-family: 'Turret Road', cursive;
 }
 header h1{
     text-align: center;
-    border: 3px outset #afa6a6;
+    border: 6px inset #afa6a6;
     width: 40%;
     margin: auto auto;
     padding: 10px;
+    font-size: 32px;
+    font-weight: bolder;
     border-radius: 12px;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
     -ms-border-radius: 12px;
     -o-border-radius: 12px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -webkit-box-shadow: inset -1px -25px 13px 16px rgba(255,255,255,1);
+-moz-box-shadow: inset -1px -25px 13px 16px rgba(255,255,255,1);
+box-shadow: inset -1px -25px 13px 16px rgba(255,255,255,1);
+color: rgb(66, 62, 62);
 }
+
 header{
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 main{
     width: 80%;
     margin: auto auto;
-    border: 1px solid green;
+    padding: 1rem;
+    background: linear-gradient(to right, red, purple);
+    padding: 5px;
 }
+/*Grid Layout*/
 .container{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
+    padding: 1px;
+    background: wheat;
+    max-height: 500px;
 }
 .input-score { grid-area: 1 / 1 / 5 / 3; }
 .game-place { grid-area: 1 / 3 / 6 / 6; }
 .final-result { grid-area: 5 / 1 / 6 / 3; }
+
+/*selection side*/
+.input-score{
+    text-align: center;
+}
+audio{
+    position: absolute;
+    left: -10000000px;
+}
 div{
-    border: 1px solid black;
     min-height: 100px;
+    background-color: rgb(25, 29, 26);
+}
+label{
+    font-weight: bolder;
+    font-size: 24px;
+    display: block;
+    margin-top: 20px;
+}
+select{
+    font-size: 24px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    outline: 2px solid transparent;
+}
+ .btn-grad {background-image: linear-gradient(to right, #200122 0%, #6f0000  51%, #200122  100%)}
+ .btn-grad {
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 10px #eee;
+    margin-left: 20px;
+    width: 40%;
+    outline: 2px transparent solid;
+}
+
+  .btn-grad:hover {
+    background-position: right center;
+    /*changethedirectionofthechangehere*/color: #fff;
+    text-decoration: none;
+    transform:scale(1.1) ;
+    -webkit-transform:scale(1.1) ;
+    -moz-transform:scale(1.1) ;
+    -ms-transform:scale(1.1) ;
+    -o-transform:scale(1.1) ;
+}
+.robot-head{
+    margin-top: 15px;
+    font-size: 52px;
+    margin-bottom: 0;
+    cursor: help;
+}
+.threat{
+    margin-top: 0;
+    margin-bottom: 0;
+    display: inline-block;
+    color: rgb(19, 170, 19);
+}
+.flashing{
+    display: inline-block;
+    margin: 0;
+    font-size: 24px;
+    color: rgb(19, 170, 19);
+}
+.animated { 
+    animation-duration: 1.5s; 
+    animation-fill-mode: both; 
+    animation-iteration-count:infinite; 
+} 
+
+@keyframes flash { 
+    0%, 50%, 100% {opacity: 1;} 
+    25%, 75% {opacity: 0;} 
+} 
+.flash { 
+    animation-name: flash; 
+}
+
+
+
+/*Choice Side*/
+div.human-choice, div.cpu-choice{
+    width: fit-content;
+    text-align: center;
+    padding: 10px;
+    font-size: 15vw;
+    height: 100%;
+
+}
+.humanity-banner {background-image: linear-gradient(to right, #159957 0%, #155799  51%, #159957  100%)}
+.humanity-banner {
+   margin: 10px;
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;
+   border-radius: 10px;
+   display: block;
+   -webkit-transition:;
+   -moz-transition:;
+   -ms-transition:;
+   -o-transition:;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+}
+ .humanity-banner:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
+
+
+
+ .cpu-banner {background-image: linear-gradient(to right, #EB5757 0%, #000000  51%, #EB5757  100%)}
+ .cpu-banner {
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 2px #eee;
+    border-radius: 10px;
+    display: block;
+    -webkit-transition:;
+    -moz-transition:;
+    -ms-transition:;
+    -o-transition:;
+}
+
+  .cpu-banner:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+ 
+  p.score{
+      color: yellow;
+      border: 2px rgb(6, 58, 6) outset;
+      background-color: rgb(46, 109, 101);
+      font-size: 22px;
+      padding-top:  30px;
+      text-align: center;
+      width: 60px;
+      height: 60px;
+      margin: auto;
+      margin-bottom: 15px;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+}
+
+/*Game side*/
+.game-place{
+    display: flex;
+    flex-direction: row;    
+    
+
+}
+.game-place div{
+    height: 79%;
+    width: 90%;
+}
+
+/*Final Result*/
+div.final-result{
+    width: 100%;
+    border: 5px inset green;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    transition: 1s all;
+    -webkit-transition: 1s all;
+    -moz-transition: 1s all;
+    -ms-transition: 1s all;
+    -o-transition: 1s all;
+}
+.tie-class{
+    background-color: hotpink;
+}
+.cpu-won-class{
+    background-color: indigo;
+}
+.human-won-class{
+    background-color: rgb(124, 196, 53);
+}
+#final{
+    padding-top: 10px;
+    padding-left: 10px;
 }

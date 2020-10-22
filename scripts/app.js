@@ -7,59 +7,72 @@
 // 7-set number of rounds needed to define a big winner 
 // 8-return the big winner!
 
-
+const cpuChoice = document.querySelector('.cpu-choice');
 const computerPlay =()=>{
     const moves = ['Rock','Paper','Scissors']
     const selecteCPU = moves[randomInteger(3)];
+    cpuChoice.innerHTML = choiceDisplay(selecteCPU);
     return selecteCPU;
 };
 //read move from dom:
 const selectBtn = document.querySelector('#move-btn');
+const humanChoice = document.querySelector('.human-choice');
+
 
 selectBtn.addEventListener('click',function(){
     const humanMove = document.getElementById('move').value;
+    humanChoice.innerHTML = choiceDisplay(humanMove);
     playRound(humanMove, computerPlay());
-    console.log(humanMove);
 })
-function humanPlay(){};
+
 function playRound(playerSelection, computerSelection){
     if(playerSelection === computerSelection)
     {
-        console.log('Tie');
-        return 1;
+        tie();
     }
     //Rock
     if(playerSelection === 'Rock'&& computerSelection === 'Scissors')
     {
-        console.log('You Win');
+        humanWon();
     }
     if(playerSelection === 'Rock'&& computerSelection === 'Paper')
     {
-        console.log('HAHAHAHA You lose');
+        cpuWon();
     }
     //Paper
     if(playerSelection === 'Paper'&& computerSelection === 'Scissors')
     {
-        console.log('HAHAHAHA You lose');
+        cpuWon();
     }
     if(playerSelection === 'Paper'&& computerSelection === 'Rock')
     {
-        console.log('You Win');
+        humanWon();
     }
     //Scissors
     if(playerSelection === 'Scissors'&& computerSelection === 'Rock')
     {
-        console.log('HAHAHAHA You lose');
+        cpuWon();
     }
     if(playerSelection === 'Scissors'&& computerSelection === 'Paper')
     {
-        console.log('You Win');
+        
+        humanWon();
     }
 }
+
+
+
 
 
 
 //helper method:
 function randomInteger(max) {
     return Math.floor(Math.random() * Math.floor(max));
+}
+let laughAudio = document.getElementById("audioID");
+
+//Example of an HTML Audio/Video Method
+
+function playAudio() {
+    laughAudio.play();
 }
