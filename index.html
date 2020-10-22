@@ -7,9 +7,25 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-
-<!--&#9994; Rock &#9995; Paper &#9996; Scissors-->
+    <header>
+        <h1>Rock &#9994; Paper &#9995; Scissors &#9996;</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="input-score">
+                <h2>Choose Your Destiny </h2> 
+                <label for="move-selected">Choose  wisely:</label>
+                    <select name="move-selected" id="move">
+                        <option value="Rock"> &#9994;</option>
+                        <option value="Paper">&#9995;</option>
+                        <option value="Scissors"> &#9996;</option>
+                </select>   
+                <button type="button" id="move-btn">Go!</button>
+            </div>
+            <div class="game-place"> </div>
+            <div class="final-result"> </div>
+        </div>
+    </main>
     <script src="app.js"></script>
 </body>
 </html>

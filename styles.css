@@ -1,167 +1,39 @@
-html{
-    overflow: hidden;
+body{
+    background: url('https://cdn-media-1.freecodecamp.org/imgr/MJAkxbh.png');
+    padding-top: 30px;
 }
-header{
-    position: relative;
-    margin-bottom: 200px;
-    border: 1px solid transparent;
-}
-#head-list{
-    list-style: none;
-    display: block;
-    position: absolute;
-    left: 72vw;
-}
-ul li{
-    float: left;
-    margin-left: 20px;
-    margin-top: 0;
-}
-.sign{
-    color: white;
-    background-color: blue;
-    font-weight: bold;
-    width: fit-content;
-    height: auto;
-    padding: 10px;
-    border-radius: 8px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
-}
-.clear{
-    clear: both;
-}
-#apps{
-font-size: 18px;
-white-space: nowrap;
-line-height: normal;
-text-align: left;
-font-family: arial,sans-serif;
-display: inline-block;
-outline: none;
-vertical-align: middle;
-border-radius: 2px;
-box-sizing: border-box;
-height: 30px;
-width: 30px;
-background-size: 528px 68px;
-background-image: url('//ssl.gstatic.com/gb/images/i2_2ec824b0.png');
-background-position: -132px -38px;
-opacity: .55;
-color: #000;
-cursor: pointer;
-text-decoration: none;
-}
-a{
-    text-decoration: none;
-}
-main{
-    height: 68vh;
-}
-main,.search{
-    position: relative;
-}
-.search h1{
-    margin-bottom: 30px;
+header h1{
     text-align: center;
-}
-#mySearch{
-    border: 2px #e2e2e2 solid;
-    height: 40px;
-    position: relative;
+    border: 3px outset #afa6a6;
     width: 40%;
     margin: auto auto;
-    text-align: center;
+    padding: 10px;
     border-radius: 12px;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
     -ms-border-radius: 12px;
     -o-border-radius: 12px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-#mySearch div{
-    display: inline-block;
-    position: absolute;
-    
+header{
+    margin-bottom: 40px;
 }
-#svg{
-    left: 10px;
-    top: 7px;
-    width: 14px;
+main{
+    width: 80%;
+    margin: auto auto;
+    border: 1px solid green;
 }
-#input{
-    left: 20px;
-    height: 40px;
-    width: 100%;
-    
-    border-radius: 12px;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
+.container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
 }
-input{
-    width:calc(100% - 40px);
-    height: 100%;
-    border: 1px transparent solid;
-    outline: 1px solid #e2e2e2;
-}
-.btn-group{
-    position: relative;
-    margin-top: 20px;
-    text-align: center;
-}
-button{
-    background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
-background-color: #f2f2f2;
-border: 1px solid #f2f2f2;
-border-radius: 4px;
-color: #5F6368;
-font-family: arial,sans-serif;
-font-size: 14px;
-margin: 11px 4px;
-padding: 0 16px;
-line-height: 27px;
-height: 36px;
-min-width: 54px;
-text-align: center;
-cursor: pointer;
-user-select: none;
-}
-footer{
-    position: absolute;
-    bottom: 0;
-    background-color: #F2F2F2;
-    width: 100%;
-}
-.menu{
-    position: relative;
-    background-color: #F2F2F2;
-}
-footer .country{
-    padding: 4px;
-    border-bottom: 1px solid #d6cece;
-}
-footer ul{
-    list-style: none;
-    background-color: #F2F2F2;
-}
-footer ul{
-    display: inline-block;
-}
-#left-menu{
-    text-align: left;
-    position: relative;
-    background-color: #F2F2F2;  
-}
-#right-menu{
-position: absolute;
-right: 10px;
-background-color: #F2F2F2;
-    
-}
-.menu{
-    margin-bottom: 0;
-    margin-top: 3px;
+.input-score { grid-area: 1 / 1 / 5 / 3; }
+.game-place { grid-area: 1 / 3 / 6 / 6; }
+.final-result { grid-area: 5 / 1 / 6 / 3; }
+div{
+    border: 1px solid black;
+    min-height: 100px;
 }
