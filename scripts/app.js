@@ -23,8 +23,20 @@ function fillRow(row,width){
             row.appendChild(column);
         }
 }
-//Event on each cell of the grid on hover:
+//Event on each cell of the grid on hover to color it randomly:
 const gridCells = document.querySelectorAll('.grid-cell');
+
 gridCells.forEach(element => {
-    element.addEventListener('mouseover',()=>{console.log('hover')})
+    element.addEventListener('mouseover',(e)=>{
+        let redRatio = greenRatio = blueRatio = 255;
+        redRatio = getRandomInt(255);
+        blueRatio = getRandomInt(255);
+        greenRatio = getRandomInt(255);
+        e.target.style.background = `rgb(${redRatio},${greenRatio},${blueRatio})`
+    });
 });
+
+//Helper method:
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+}
