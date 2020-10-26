@@ -15,9 +15,10 @@ h2{
     font-size: 20px;
 }
 em{
-    color: rgb(255, 0, 100);
+    color: rgb(255, 0, 20);
     font-size: 18px;
     font-weight: bolder;
+    text-shadow: 1px 1px 13px white;
 }
 .container{
     width: fit-content;
