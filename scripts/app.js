@@ -1,27 +1,44 @@
 //global vars DOM:
 const mainElement = document.querySelector('main');
-const container = document.querySelector('.container');
 const makeGridBtn = document.querySelector('#submit-btn');
-const gridCells = document.querySelectorAll('.grid-cell');
 const resetBtn = document.querySelector('#reset-btn');
+const container = document.querySelector('.container');
 
 
 //to build grid:
+
 makeGridBtn.addEventListener('click', ()=>{
     mainElement.innerHTML = ''; 
     const gridSize = document.querySelector('input');
     let inputValue = parseInt(gridSize.value);
+
+    if(inputValue)
+    {
     if(inputValue > 60){
         alert('Hey Hey, I said max value is 60 (-_-;) Now it will be a ZERO for you');
         
     }
     else{
         makeGrid(inputValue,inputValue);  
-        gridSize.value = 0;
-    }
+        //coloring process start after input, so the grid already exisit to use on DOM:
+        const gridCells = document.querySelectorAll('.grid-cell');
+        gridCells.forEach(element => {
+        element.addEventListener('mouseover',(e)=>{
+            let redRatio = greenRatio = blueRatio = 255;
+            redRatio = getRandomInt(255);
+            blueRatio = getRandomInt(255);
+            greenRatio = getRandomInt(255);
+            e.target.style.background = `rgb(${redRatio},${greenRatio},${blueRatio})`
+    });
 });
 
-function makeGrid(height = 20, width = 20)
+    }
+    }else{
+        alert('Please stop drinking and add a size to start with (-_-;)')
+        }
+});
+
+function makeGrid(height, width)
 {
     for(let i = 1; i <= height; i++)
         {
@@ -40,16 +57,7 @@ function fillRow(row,width){
             row.appendChild(column);
         }
 }
-//Event on each cell of the grid on hover to color it randomly:
-gridCells.forEach(element => {
-    element.addEventListener('mouseover',(e)=>{
-        let redRatio = greenRatio = blueRatio = 255;
-        redRatio = getRandomInt(255);
-        blueRatio = getRandomInt(255);
-        greenRatio = getRandomInt(255);
-        e.target.style.background = `rgb(${redRatio},${greenRatio},${blueRatio})`
-    });
-});
+
 //Reset Grid:
 resetBtn.addEventListener('click',function resetGrid(e){
     e.preventDefault();
