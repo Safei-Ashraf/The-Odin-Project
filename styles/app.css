@@ -33,11 +33,17 @@ em{
     flex: 1;
 }
 .group{
-
     border: 2px solid slateblue;
     width: fit-content;
     margin:auto;
     margin-bottom: 20px;
+    box-shadow: 5px 5px 15px 5px black;
+    border-radius: 8px;
+    padding: 10px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
 }
 button{
     border-radius: 8px;
