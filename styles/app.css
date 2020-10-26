@@ -1,0 +1,18 @@
+*{
+    text-align: center;
+}
+.container{
+width: fit-content;
+    margin: auto;
+    text-align: center;
+    display: flex;
+}
+.grid-cell{
+    border: 1px solid black;
+    width: 15px;
+    height: 15px;
+    flex: 1;
+}
+.clear{
+    clear: both;
+}
