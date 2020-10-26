@@ -11,7 +11,14 @@ makeGridBtn.addEventListener('click', ()=>{
     mainElement.innerHTML = ''; 
     const gridSize = document.querySelector('input');
     let inputValue = parseInt(gridSize.value);
-    makeGrid(inputValue,inputValue);    
+    if(inputValue > 60){
+        alert('Hey Hey, I said max value is 60 (-_-;) Now it will be a ZERO for you');
+        
+    }
+    else{
+        makeGrid(inputValue,inputValue);  
+        gridSize.value = 0;
+    }
 });
 
 function makeGrid(height = 20, width = 20)
