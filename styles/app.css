@@ -48,17 +48,19 @@ main{
 }
 .buttons-collection{
     border: 2px solid #8a8686;
-    padding-top: 20px;
+    padding-top: 15px;
 }
 .buttons-holder{
     display: flex;
     flex-wrap: nowrap;
     flex-direction: row;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 .grid-cell{
     flex: 1;
-    border: 1px solid black;
-    width: 15%;
+    border: 1px solid #909090;
+    width: 7%;
     height: 10%;
     margin: 4px;
     min-height: 60px;
@@ -72,6 +74,7 @@ main{
     font-weight: bolder;
     font-size: 20px;
     padding: 1px;
+    box-shadow: 2px 2px 2px 2px #8a8686;
 }
 #equal-btn{
     flex: 2;
