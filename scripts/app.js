@@ -32,3 +32,8 @@ function operate (operator,x,y) {
     
     }
 }
+
+function clearInput(target)
+{
+    target.innerHTML = '';
+}
