@@ -33,7 +33,11 @@ function operate (operator,x,y) {
     }
 }
 
-function clearInput(target)
-{
-    target.innerHTML = '';
-}
+
+const displayScreen = document.querySelector('.display');
+const resetBtn = document.querySelector('#reset-btn');
+resetBtn.addEventListener('click', ()=>{displayScreen.innerHTML = '';});
+const buttons = document.querySelectorAll('.grid-cell');
+buttons.forEach(button => {button.addEventListener('click',()=>{
+displayScreen.textContent += button.value;
+})});

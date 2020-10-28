@@ -61,6 +61,21 @@ main{
     padding-left: 4px;
     padding-right: 4px;
 }
+.animated { 
+    animation-duration: 1.8s; 
+    animation-fill-mode: both; 
+    animation-iteration-count:infinite; 
+} 
+
+@keyframes flash { 
+    0%, 50%, 100% {opacity: 1;} 
+    25%, 75% {opacity: 0;} 
+} 
+.flash { 
+    animation-name: flash; 
+}
+
+
 button{
     outline: transparent;
 }
