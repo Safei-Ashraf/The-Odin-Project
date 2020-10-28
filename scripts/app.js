@@ -49,9 +49,13 @@ buttons.forEach(button => {button.addEventListener('click',()=>{
         let newstr = str.substring(0,str.length-1);
         displayScreen.textContent = newstr;
     }
+    // else if(){}
+    // else if(){}
+    // else if(){}
+    // else if(){}
     else{
         
-        displayScreen.textContent += button.value;
+        displayScreen.innerHTML += `<span>${button.value}</span>`;
         if(Number(button.value) >= 0 && Number(button.value) <= 9){
             console.log(`${button.value} is a digit`)
         }      
