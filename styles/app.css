@@ -75,9 +75,25 @@ main{
     text-align: center;
     font-weight: bolder;
     font-size: 20px;
+    line-height: 60px;
     padding: 1px;
     box-shadow: 2px 2px 2px 2px #8a8686;
+    transition: 0.1s all;
+    -webkit-transition: 0.1s all;
+    -moz-transition: 0.1s all;
+    -ms-transition: 0.1s all;
+    -o-transition: 0.1s all;
 }
 #equal-btn{
     flex: 2;
+}
+.grid-cell:hover{
+    transform: scale(1.01);
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -o-transform: scale(1.01);
+}
+.grid-cell:active{
+    box-shadow: 2px 2px 2px 2px transparent;
 }
