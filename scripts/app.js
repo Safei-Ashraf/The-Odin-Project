@@ -1,16 +1,4 @@
 //Calcaulator logic:
-function add(x,y) {
-    return x+y;
-}
-function subtract(x,y) {
-    return x-y;
-}
-function multiply(x,y) {
-    return x-y;
-}
-function divide(x,y) {
-    return x/y;
-}
 function operate (operator,x,y) {
     switch (operator) {
         case `-`:
@@ -28,11 +16,9 @@ function operate (operator,x,y) {
         case `/`:
             console.log('division');
             return x / y;
-            break;
-    
+            break;  
     }
 }
-
 
 const displayScreen = document.querySelector('.display');
 const resetBtn = document.querySelector('#reset-btn');
@@ -49,7 +35,16 @@ buttons.forEach(button => {button.addEventListener('click',()=>{
         let newstr = str.substring(0,str.length-1);
         displayScreen.textContent = newstr;
     }
-    // else if(){}
+    else if(button.value ==='.'){
+        const decimalBtn = document.querySelector('#decimal');
+        let str = displayScreen.textContent;
+        let search = str.indexOf('.');
+        console.log(search)
+        if(search===-1){
+            displayScreen.innerHTML += `<span>${button.value}</span>`;
+            decimalBtn.disabled = true;
+        }
+    }
     // else if(){}
     // else if(){}
     // else if(){}
