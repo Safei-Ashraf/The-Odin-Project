@@ -22,12 +22,16 @@ function operate (operator,x,y) {
 
 const displayScreen = document.querySelector('.display');
 const resetBtn = document.querySelector('#reset-btn');
+const decimalBtn = document.querySelector('#decimal');
+let displayText;
 resetBtn.addEventListener('click', ()=>{});
 const buttons = document.querySelectorAll('.grid-cell');
 buttons.forEach(button => {button.addEventListener('click',()=>{
+    displayText= displayScreen.textContent;
     if(button.value === 'reset')
     {
         displayScreen.innerHTML = '<span id="starter" class="animated flash">&#9833;</span>';
+        decimalBtn.disabled = false;
     }
     else if(button.value === 'delete')
     {
@@ -36,7 +40,6 @@ buttons.forEach(button => {button.addEventListener('click',()=>{
         displayScreen.textContent = newstr;
     }
     else if(button.value ==='.'){
-        const decimalBtn = document.querySelector('#decimal');
         let str = displayScreen.textContent;
         let search = str.indexOf('.');
         console.log(search)
@@ -45,14 +48,15 @@ buttons.forEach(button => {button.addEventListener('click',()=>{
             decimalBtn.disabled = true;
         }
     }
-    // else if(){}
-    // else if(){}
-    // else if(){}
-    else{
-        
+    else if( button.value =='='){
+        let operation = displayText.textContent;
+        operation = operation.trim();
+        operation.split('+')
+
+    }
+    else if(Number(button.value) >= 0 && Number(button.value) <= 9){
+        //console.log(displayText)
         displayScreen.innerHTML += `<span>${button.value}</span>`;
-        if(Number(button.value) >= 0 && Number(button.value) <= 9){
             console.log(`${button.value} is a digit`)
-        }      
     }
 })});
