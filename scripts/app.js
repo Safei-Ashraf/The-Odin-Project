@@ -36,8 +36,24 @@ function operate (operator,x,y) {
 
 const displayScreen = document.querySelector('.display');
 const resetBtn = document.querySelector('#reset-btn');
-resetBtn.addEventListener('click', ()=>{displayScreen.innerHTML = '';});
+resetBtn.addEventListener('click', ()=>{});
 const buttons = document.querySelectorAll('.grid-cell');
 buttons.forEach(button => {button.addEventListener('click',()=>{
-displayScreen.textContent += button.value;
+    if(button.value === 'reset')
+    {
+        displayScreen.innerHTML = '<span id="starter" class="animated flash">&#9833;</span>';
+    }
+    else if(button.value === 'delete')
+    {
+        let str = displayScreen.textContent;
+        let newstr = str.substring(0,str.length-1);
+        displayScreen.textContent = newstr;
+    }
+    else{
+        
+        displayScreen.textContent += button.value;
+        if(Number(button.value) >= 0 && Number(button.value) <= 9){
+            console.log(`${button.value} is a digit`)
+        }      
+    }
 })});
