@@ -16,36 +16,38 @@
         <div class="container">
             <div class="calculator">
                 <div class="display">
+                    <div data-previous-operand class="previousOperand"></div>
+                    <div data-current-operand class="currentOperand"></div>
                 </div>
                 <div class="buttons-collection">
                     <div class="buttons-holder">
-                        <button class="grid-cell" value="reset" id="reset-btn">CE</button>
-                        <button class="grid-cell" value="/">/</button>
-                        <button class="grid-cell" value="*">*</button>
-                        <button class="grid-cell" value="-">-</button>
+                        <button  data-reset class="grid-cell" value="reset" id="reset-btn">CE</button>
+                        <button data-operation class="grid-cell" value="/">/</button>
+                        <button data-operation class="grid-cell" value="*">*</button>
+                        <button data-operation class="grid-cell" value="-">-</button>
                     </div>
                     <div class="buttons-holder">
-                        <button class="grid-cell" value="7">7</button>
-                        <button class="grid-cell" value="8">8</button>
-                        <button class="grid-cell" value="9">9</button>
-                        <button class="grid-cell" value="+">+</button>
+                        <button data-number class="grid-cell" value="7">7</button>
+                        <button data-number class="grid-cell" value="8">8</button>
+                        <button data-number class="grid-cell" value="9">9</button>
+                        <button data-operation class="grid-cell" value="+">+</button>
                     </div>
                     <div class="buttons-holder">
-                        <button class="grid-cell" value="4">4</button>
-                        <button class="grid-cell" value="5">5</button>
-                        <button class="grid-cell" value="6">6</button>
-                        <button class="grid-cell" value="delete">&#9949;</button>
+                        <button data-number class="grid-cell" value="4">4</button>
+                        <button data-number class="grid-cell" value="5">5</button>
+                        <button data-number class="grid-cell" value="6">6</button>
+                        <button data-delete class="grid-cell" value="delete">&#9949;</button>
                     </div>
                     <div class="buttons-holder">
-                        <button class="grid-cell" value="1">1</button>
-                        <button class="grid-cell" value="2">2</button>
-                        <button class="grid-cell" value="3">3</button>
+                        <button data-number class="grid-cell" value="1">1</button>
+                        <button data-number class="grid-cell" value="2">2</button>
+                        <buttondata-number  class="grid-cell" value="3">3</buttondata-number>
                         <button class="grid-cell" value="hi" onclick="window.open('https://safei-ashraf.netlify.app/')">Hi!</button>
                     </div>
                     <div class="buttons-holder">
-                        <button class="grid-cell" value="0">0</button>
-                        <button class="grid-cell" value="." id="decimal">.</button>
-                        <button class="grid-cell" id="equal-btn" value="=">=</button>
+                        <button data-number class="grid-cell" value="0">0</button>
+                        <button data-number class="grid-cell" value="." id="decimal">.</button>
+                        <button data-equal class="grid-cell" id="equal-btn" value="=">=</button>
                     </div>
                 </div>
             </div>
