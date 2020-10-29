@@ -1,62 +1,38 @@
-//Calcaulator logic:
-function operate (operator,x,y) {
-    switch (operator) {
-        case `-`:
-            console.log('deduction');
-            return x - y;
-            break;
-        case `+`:
-            console.log('add');
-            return x + y;
-            break;
-        case `*`:
-            console.log('***');
-            return x * y;
-            break;
-        case `/`:
-            console.log('division');
-            return x / y;
-            break;  
-    }
-}
+const numberBtns = document.querySelectorAll('[data-number]');
+const operationBtns = document.querySelectorAll('[data-operation]');
+const equalBtn = document.querySelector('[data-equal]');
+const clearBtn = document.querySelector('[data-reset]');
+const deleteBtn = document.querySelector('[data-delete]');
+const previousOperandElement = document.querySelector('[data-previous-operand]');
+const currentOperandElement = document.querySelector('[data-current-operand]');
 
-const displayScreen = document.querySelector('.display');
-const resetBtn = document.querySelector('#reset-btn');
-const decimalBtn = document.querySelector('#decimal');
-let displayText;
-resetBtn.addEventListener('click', ()=>{});
-const buttons = document.querySelectorAll('.grid-cell');
-buttons.forEach(button => {button.addEventListener('click',()=>{
-    displayText= displayScreen.textContent;
-    if(button.value === 'reset')
-    {
-        displayScreen.innerHTML = '<span id="starter" class="animated flash">&#9833;</span>';
-        decimalBtn.disabled = false;
-    }
-    else if(button.value === 'delete')
-    {
-        let str = displayScreen.textContent;
-        let newstr = str.substring(0,str.length-1);
-        displayScreen.textContent = newstr;
-    }
-    else if(button.value ==='.'){
-        let str = displayScreen.textContent;
-        let search = str.indexOf('.');
-        console.log(search)
-        if(search===-1){
-            displayScreen.innerHTML += `<span>${button.value}</span>`;
-            decimalBtn.disabled = true;
-        }
-    }
-    else if( button.value =='='){
-        let operation = displayText.textContent;
-        operation = operation.trim();
-        operation.split('+')
+const calculator = new Calculator(previousOperandElement, currentOperandElement);
 
+numberBtns.forEach( button => button.addEventListener('click',()=>{
+    if(calculator.previousOperand === '' && calculator.currentOperand !== '' && calculator.readyToReset)
+    {
+        calculator.currentOperand = "";
+        calculator.readyToReset = false;
     }
-    else if(Number(button.value) >= 0 && Number(button.value) <= 9){
-        //console.log(displayText)
-        displayScreen.innerHTML += `<span>${button.value}</span>`;
-            console.log(`${button.value} is a digit`)
-    }
-})});
+    calculator.appendNumber(button.innerText);
+    calculator.updateDisplay();
+} ));
+
+operationBtns.forEach( button => button.addEventListener('click',()=>{
+    calculator.chooseOperation(button.innerText);
+    calculator.updateDisplay();
+} ));
+
+equalBtn.addEventListener('click', () =>{
+    calculator.compute();
+    calculator.updateDisplay();
+})
+
+clearBtn.addEventListener('click', () =>{
+    calculator.clear();
+    calculator.updateDisplay();
+})
+deleteBtn.addEventListener('click', () =>{
+    calculator.deleteLastChar();
+    calculator.updateDisplay();
+})
