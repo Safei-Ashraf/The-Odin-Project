@@ -45,4 +45,21 @@ table tr td:last-child {
 	color: white;
 	font-size: 2em;
 }
-  
+button{
+	color: wheat;
+	background-color: rgb(218, 192, 49);
+	font-weight: bolder;
+	border-radius: 50%;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	-o-border-radius: 50%;
+	box-shadow: 3px 3px 2px 2px rgb(209, 191, 32);
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	border: 2px transparent;
+	outline: transparent;
+	font-size: 25px;
+	cursor: pointer;
+}
